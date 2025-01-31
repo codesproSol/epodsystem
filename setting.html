@@ -1,0 +1,234 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>tracking application
+
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container setting_cont">
+            <nav>
+                <div class="nav_links">
+                    <div class="nav_link"><a class="" href="./index.html"><i class="fa fa-house"></i></a></div>
+                    <div class="nav_link"><a class="" href="./history.html"><i class="fa fa-file"></i></a></div>
+                    <div class="nav_link ac"><a class="act" href="#"><i class="fa fa-add"></i></a></div>
+                    <div class="nav_link"><a class="" href="#"><i class="fa fa-message-captions"></i></a></div>
+                    <div class="nav_link"><a class="active" href="#"><i class="fa fa-user"></i></a></div>
+                </div>
+            </nav>
+            <div class="top">
+                <div class="header">
+                    <a href="./index.html" class="icon">
+                        <i class="fa fa-gear"></i> Settings
+                    </a>
+
+
+                </div>
+
+            </div>
+            <main>
+                <div class="settings_page">
+                    <div class="profile_section">
+                        <div class="profile_picture">
+                            <div class="profile_img">
+                                <img id="profileImage" src="./post for blue horizon002.png" alt="User Profile Picture">
+                            </div>
+                            <input type="file" id="uploadPic" style="display: none;" accept="image/*">
+
+                            <button class="edit_pic_btn" onclick="changeProfilePicture()"><i
+                                    class="fa fa-edit"></i></button>
+                        </div>
+                        <div class="profile_info">
+                            <h2 class="profile_name">Adeola Olaniyi</h2>
+                            <p class="profile_email">adeola@example.com</p>
+                            <button class="edit_profile_btn">Edit Profile</button>
+                        </div>
+                    </div>
+
+                    <div class="settings_options">
+                        <h3>Account Settings</h3>
+                        <ul>
+                            <li><a href="#" onclick="changePassword()">Change Password</a></li>
+                            <li><a href="#" onclick="manageAddress()">Manage Addresses</a></li>
+                            <li><a href="#">Notification Preferences</a></li>
+                        </ul>
+
+                        <h3>Privacy Settings</h3>
+                        <ul>
+                            <li><a href="#">Two-Factor Authentication</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="change_password_section noshow">
+                    <div class="return_back" onclick="handleShow(this)"><i class="fa fa-angle-left"></i> Back</div>
+                    <div class="ch_p">
+                        <h3>Change Password</h3>
+                        <form id="change_password_form">
+                            <div class="form-control">
+                                <label for="current_password">Current Password</label>
+                                <input type="password" id="current_password" placeholder="***********" required>
+                                <small class="error-message" id="current_password_error"></small>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="new_password">New Password</label>
+                                <input type="password" id="new_password" required placeholder="***********">
+                                <small class="error-message" id="new_password_error"></small>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="confirm_password">Confirm New Password</label>
+                                <input type="password" id="confirm_password" placeholder="***********" required>
+                                <small class="error-message" id="confirm_password_error"></small>
+                            </div>
+
+                            <button type="submit">Update Password</button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="manage_address_section noshow">
+                    <div class="return_back" onclick="handleHidemg(this)"><i class="fa fa-angle-left"></i> Back</div>
+                    <div class="mg_addr">
+                        <h3>Manage Address</h3>
+                        <form id="manage_address_form">
+                            <div class="form-control">
+                                <label for="full_name">Full Name</label>
+                                <input type="text" id="full_name" placeholder="John Doe" required>
+                                <small class="error-message" id="full_name_error"></small>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="phone_number">Phone Number</label>
+                                <input type="tel" id="phone_number" placeholder="+123 456 7890" required>
+                                <small class="error-message" id="phone_number_error"></small>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="address">Address</label>
+                                <textarea id="address" placeholder="Enter your full address" rows="5"
+                                    required></textarea>
+                                <small class="error-message" id="address_error"></small>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="city">City</label>
+                                <input type="text" id="city" placeholder="New York" required>
+                                <small class="error-message" id="city_error"></small>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="postal_code">Postal Code</label>
+                                <input type="text" id="postal_code" placeholder="10001" required>
+                                <small class="error-message" id="postal_code_error"></small>
+                            </div>
+
+                            <button type="submit">Save Address</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="notification_preference">
+
+                </div>
+
+
+
+            </main>
+
+        </div>
+    </div>
+
+    <script>
+        function editProfile() {
+            let newName = prompt("Enter your new name:", document.getElementById("profileName").innerText);
+            if (newName) {
+                document.getElementById("profileName").innerText = newName;
+            }
+            let newEmail = prompt("Enter your new email:", document.getElementById("profileEmail").innerText);
+            if (newEmail) {
+                document.getElementById("profileEmail").innerText = newEmail;
+            }
+        }
+
+        function handleShow(element) {
+            element.closest(".change_password_section").classList.add("noshow");
+
+        }
+
+        function handleHidemg(element) {
+            element.closest(".manage_address_section").classList.add("noshow");
+
+        }
+
+
+        function changePassword() {
+            document.querySelector('.change_password_section').classList.toggle('noshow')
+        }
+
+        function manageAddress() {
+            document.querySelector('.manage_address_section').classList.toggle('noshow')
+        }
+
+        function changeProfilePicture() {
+            document.getElementById("uploadPic").click();
+        }
+
+        document.getElementById("uploadPic").addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("profileImage").src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+
+        document.getElementById("change_password_form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            let currentPassword = document.getElementById("current_password").value.trim();
+            let newPassword = document.getElementById("new_password").value.trim();
+            let confirmPassword = document.getElementById("confirm_password").value.trim();
+
+            let valid = true;
+
+            // Clear previous error messages
+            document.querySelectorAll(".error-message").forEach(el => el.innerText = "");
+
+            // Validate current password
+            if (currentPassword === "") {
+                document.getElementById("current_password_error").innerText = "Current password is required.";
+                valid = false;
+            }
+
+            // Validate new password length
+            if (newPassword.length < 8) {
+                document.getElementById("new_password_error").innerText = "New password must be at least 8 characters long.";
+                valid = false;
+            }
+
+            // Validate confirm password match
+            if (newPassword !== confirmPassword) {
+                document.getElementById("confirm_password_error").innerText = "Passwords do not match.";
+                valid = false;
+            }
+
+            if (valid) {
+                alert("Password updated successfully!");
+                // Here, you can proceed with form submission via AJAX or another method
+            }
+        });
+    </script>
+</body>
+
+</html>

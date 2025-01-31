@@ -615,3 +615,199 @@ main .destination_trail .trail.home .icon::after {
   flex-direction: column;
   gap: 20px;
 }
+
+.container.setting_cont .top {
+  max-height: 120px;
+  flex: 0.5;
+}
+.container.setting_cont main {
+  padding: 20px;
+  padding-bottom: 100px;
+  background: #fff;
+  height: auto;
+  position: relative;
+
+  /* overflow: hidden; */
+}
+
+.container.setting_cont .header {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  font-size: 25px;
+  height: 100%;
+  gap: 20px;
+}
+
+.container.setting_cont .header a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.profile_section .profile_info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.profile_section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.profile_picture {
+  position: relative;
+  filter: drop-shadow(2px 4px 3px #ccc);
+}
+.profile_picture .profile_img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #000088;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile_picture img {
+  width: 100%;
+}
+.edit_pic_btn {
+  position: absolute;
+  bottom: 30px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+  right: -10px;
+}
+.edit_pic_btn,
+.edit_profile_btn {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #000088;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.settings_options {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.settings_options h3 {
+  margin-top: 16px;
+  color: #000088;
+}
+.settings_options ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 13px;
+  /* background: green; */
+}
+.settings_options li a {
+  text-decoration: none;
+  color: #707070;
+  padding: 5px 2px;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.noshow {
+  width: 0 !important;
+  overflow: hidden;
+}
+
+.change_password_section,
+.manage_address_section {
+  width: 100%;
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  padding: 0 !important;
+  right: 0;
+  top: 0;
+  border-radius: 30px 30px 0 0;
+  font-size: 13px;
+  transition: all 400ms ease;
+}
+
+.change_password_section .return_back,
+.manage_address_section .return_back {
+  display: flex;
+  gap: 10px;
+  color: #000088;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.change_password_section .ch_p,
+.manage_address_section .mg_addr {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  padding: 5px 30px;
+}
+
+.change_password_section .ch_p form,
+.manage_address_section .mg_addr form {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  gap: 20px;
+  margin-top: 20px;
+
+  /* width: 100%; */
+}
+
+.change_password_section .ch_p form .form-control,
+.manage_address_section .mg_addr form .form-control {
+  display: flex;
+  flex-direction: column;
+
+  /* width: 100%; */
+}
+
+.change_password_section .ch_p form .form-control input,
+.change_password_section .ch_p form .form-control textarea,
+.manage_address_section .mg_addr form .form-control input,
+.manage_address_section .mg_addr form .form-control textarea {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #b1b0b0;
+}
+
+.change_password_section .ch_p form button,
+.manage_address_section .mg_addr form button {
+  padding: 10px 20px;
+  background: #000088;
+  color: #fff;
+  border-radius: 5px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.error-message {
+  color: #f95d5d;
+}
