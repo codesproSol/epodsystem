@@ -709,6 +709,7 @@ main .destination_trail .trail.home .icon::after {
 .settings_options h3 {
   margin-top: 16px;
   color: #000088;
+  text-align: center;
 }
 .settings_options ul {
   list-style: none;
@@ -717,7 +718,9 @@ main .destination_trail .trail.home .icon::after {
   gap: 20px;
   width: 100%;
   padding: 10px 0;
-  font-size: 13px;
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
   /* background: green; */
 }
 .settings_options li a {
@@ -758,6 +761,7 @@ a {
   padding: 10px 20px;
   cursor: pointer;
   margin-left: 10px;
+  align-items: center;
 }
 
 .change_password_section .ch_p,
