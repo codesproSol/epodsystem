@@ -1,0 +1,617 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  outline: none;
+}
+
+body {
+  background: #000088;
+  scroll-behavior: smooth;
+  align-items: center;
+}
+
+.container {
+  max-width: 786px;
+  height: 100dvh;
+  width: 100%;
+  margin: auto;
+  clear: both;
+  /* background: pink; */
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  width: 100%;
+  max-width: 786px;
+  height: 60px;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0px 10px 20px #5c5c5c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+nav .nav_links {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+nav .nav_links .nav_link {
+  width: 40px;
+  height: 40px;
+}
+
+nav .nav_links .nav_link a {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #828282;
+  transition: all 400ms ease;
+}
+
+nav .nav_links .nav_link a:hover {
+  background: #0000882d;
+  color: #000088;
+}
+
+nav .nav_links .nav_link a.active {
+  background: #000088;
+  color: #fff;
+}
+
+nav .nav_links .nav_link a .fa-add {
+  font-size: 24px;
+}
+nav .nav_links .nav_link.ac {
+  width: 50px;
+  height: 50px;
+}
+nav .nav_links .nav_link a.act {
+  background: #000088;
+  color: #fff;
+}
+
+.top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+}
+
+.top .userp-cont {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top .search_cont {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.top .search_cont .search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex: 4;
+}
+
+.top .search_cont .search .icon {
+  position: absolute;
+  margin-left: 5px;
+  color: #707070;
+}
+
+.top .search_cont .search input {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  text-indent: 15px;
+  background: #fff;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+}
+
+.top .search_cont .search-bu_scanning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex: 1; */
+  background: #ffffff46;
+  border-radius: 3px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+}
+
+.top .userp-cont .profile_details {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  /* background: green; */
+}
+
+.top .userp-cont .profile_details .profile_info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.top .userp-cont .profile_details .profile_info .profile_name {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.w_msg {
+  color: #fff;
+}
+
+.top .userp-cont .profile_details .profile_pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  /* background: #fff; */
+  overflow: hidden;
+}
+.top .userp-cont .profile_details .profile_pic img {
+  width: 100%;
+}
+
+.notification .notification_bell {
+  width: 40px;
+  height: 40px;
+  background: #ffffff3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  color: #fff;
+}
+
+main {
+  background: rgb(255, 255, 255);
+  flex: 5;
+  height: auto;
+  border-radius: 30px 30px 0 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+main .track_title {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+main .box_tracking {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  background: rgba(0, 0, 255, 0.148);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+main .box_tracking .map {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: #ccc;
+  flex: 2;
+  height: 100px;
+  border-radius: 5px;
+  height: 150px;
+}
+
+main .box_tracking .track_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /* flex: 1; */
+  width: 100px;
+}
+
+main .box_tracking .track_info .track_id {
+  font-size: 14px;
+  color: #4e4e4e;
+  text-align: center;
+}
+
+main .box_tracking .track_info .track_desc {
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+}
+
+main .box_tracking .track_info .track_status {
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.recent_activities {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 100px;
+}
+
+.activity {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 0px 30px #e9e9e9;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.activity .activity_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e9e9e9;
+  padding: 5px 0;
+  font-size: 13px;
+}
+
+.activity .activity_info .activity_status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.shipped {
+  background: rgb(33, 184, 33);
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.intransit {
+  font-size: 12px;
+  color: #ffffff;
+  background: blue;
+}
+
+.delayed {
+  font-size: 12px;
+  color: #ffffff;
+  background: rgb(235, 148, 26);
+}
+
+.cancelled {
+  font-size: 12px;
+  color: #ffffff;
+  background: rgb(235, 26, 26);
+}
+
+.activity .track_dest {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.activity .track_dest .icon {
+  color: #000;
+}
+
+.activity .track_dest address h1 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.activity .track_dest address p {
+  font-size: 12px;
+  color: #b1b0b0;
+}
+.activity .tracking_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.activity .tracking_info .t_profile {
+  display: flex;
+  font-size: 12px;
+  gap: 10px;
+  align-items: center;
+}
+.activity .t_profile .t_img {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #000088;
+}
+
+.activity .t_profile .t_img img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.activity .tracking_info .action_btn {
+  display: flex;
+  align-items: center;
+}
+
+.activity .tracking_info .action_btn a {
+  padding: 10px 16px;
+  border-style: none;
+  outline: none;
+  border-radius: 3px;
+  background: #00008835;
+  cursor: pointer;
+  transition: all 400ms ease;
+  text-decoration: none;
+  color: #000088;
+}
+
+.recent_activities .activity .tracking_info .action_btn a:hover {
+  color: #fff;
+  background: #000088;
+}
+.container.delivery_cont .top {
+  max-height: 120px;
+  flex: 0.5;
+}
+.container.delivery_cont main {
+  padding: 0;
+  padding-bottom: 100px;
+  background: #fff;
+  height: auto;
+
+  /* overflow: hidden; */
+}
+
+.container.delivery_cont .header {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  font-size: 25px;
+  height: 100%;
+  gap: 20px;
+}
+
+.container.delivery_cont .header a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.delivery_map_box {
+  width: 100%;
+  background-color: #ccc;
+  height: 80vh;
+  min-height: 80vh;
+  overflow: hidden;
+  border-radius: 30px 30px 0 0;
+}
+
+main .info_box {
+  padding: 20px;
+  /* min-height: 500px; */
+  height: 100%;
+  /* padding-bottom: 200px; */
+}
+
+main .destination_trail {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 20px #bfbfbf;
+  padding: 10px;
+  gap: 20px;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: -50px;
+}
+
+main .destination_trail .trail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+main .destination_trail .trail h2 {
+  font-size: 16px;
+}
+
+main .destination_trail .trail small {
+  color: #4e4e4e;
+}
+main .destination_trail .trail .icon {
+  width: 35px;
+  height: 35px;
+  background: #cfcfcf89;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
+}
+
+main .destination_trail .trail.active .icon {
+  background: #000088;
+}
+main .destination_trail .trail.active h2 {
+  color: #000088;
+}
+
+main .destination_trail .trail .icon::after {
+  position: absolute;
+  content: "";
+  background: #cfcfcf89;
+  width: 2px;
+  height: 40px;
+  top: 35px;
+  z-index: 1;
+}
+
+main .destination_trail .trail.active .icon::after {
+  background: blue;
+}
+
+main .destination_trail .trail.home .icon::after {
+  display: none;
+}
+
+.contact_info {
+  padding: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+}
+
+.contact_info .info {
+  display: flex;
+  gap: 10px;
+}
+
+.contact_info .info .info_img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #000088;
+  overflow: hidden;
+}
+.contact_info .info_details {
+  flex: 3;
+}
+.contact_info .info_details .contact_info .info h2 {
+  font-size: 15px;
+}
+
+.contact_info .info small {
+  font-size: 12px;
+  color: #5c5c5c;
+}
+.contact_info .info .info_img img {
+  width: 100%;
+}
+
+.contact_info .reach_out {
+  display: flex;
+  width: 100px;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+
+.contact_info .reach_out .icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact_info .reach_out .icon a {
+  color: #000088;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #00008812;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container.history_cont .top {
+  max-height: 120px;
+  flex: 0.5;
+}
+
+.container.history_cont .header {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  font-size: 25px;
+  height: 100%;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.container.history_cont .header a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.container.history_cont main .nav {
+  width: 100%;
+  /* background: green; */
+  overflow-x: scroll;
+  margin-bottom: 10px;
+}
+
+.container.history_cont main .nav::-webkit-scrollbar {
+  height: 3px;
+  background: transparent;
+}
+
+.container.history_cont main .nav .sort {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+  transition: all 800ms ease;
+}
+
+.container.history_cont main .nav .sort button {
+  padding: 10px 15px;
+  border-style: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #000;
+  transition: ALL 400ms ease;
+  scale: 0.9;
+  white-space: nowrap;
+}
+
+.container.history_cont main .nav .sort button:hover {
+  color: #000088;
+  scale: 1;
+}
+
+.container.history_cont main .nav .sort button.active {
+  background: #000088;
+  color: #fff;
+  scale: 1;
+}
+
+.activities {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
