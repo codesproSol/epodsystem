@@ -172,6 +172,9 @@ nav .nav_links .nav_link a.act {
   border-radius: 5px;
   /* background: #fff; */
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .top .userp-cont .profile_details .profile_pic img {
   width: 100%;
@@ -351,10 +354,13 @@ main .box_tracking .track_info .track_status {
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #000088;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .activity .t_profile .t_img img {
-  width: 100%;
+  width: 130%;
   object-fit: contain;
 }
 
@@ -610,6 +616,10 @@ main .destination_trail .trail.home .icon::after {
   scale: 1;
 }
 
+.container.history_cont main {
+  padding-bottom: 100px;
+}
+
 .activities {
   display: flex;
   flex-direction: column;
@@ -679,7 +689,7 @@ main .destination_trail .trail.home .icon::after {
   justify-content: center;
 }
 .profile_picture img {
-  width: 100%;
+  width: 130%;
 }
 .edit_pic_btn {
   position: absolute;
