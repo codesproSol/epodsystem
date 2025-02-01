@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="activities">
-                    <div class="activity" data-status="shipped">
+                    <a href="./delivery.html" class="activity" data-status="shipped">
                         <div class="activity_info">
                             <div class="activity_id">#19025637</div>
                             <div class="activity_status shipped">shipped</div>
@@ -78,13 +78,12 @@
                             </div>
 
                             <div class="action_btn">
-                                <a href="./delivery.html" type="button" title="view destination"><i
-                                        class="fa fa-angle-right"></i></a>
+                                <i class="fa fa-clock"></i> <span class="time_tracker" data-start-time="3000"></span>
                             </div>
                         </div>
 
-                    </div>
-                    <div class="activity" data-status="delayed">
+                    </a>
+                    <a href="./delivery.html" class="activity" data-status="delayed">
                         <div class="activity_info">
                             <div class="activity_id">#19025637</div>
                             <div class="activity_status delayed">delayed</div>
@@ -118,14 +117,13 @@
                             </div>
 
                             <div class="action_btn">
-                                <a href="./delivery.html" type="button" title="view destination"><i
-                                        class="fa fa-angle-right"></i></a>
+                                <i class="fa fa-clock"></i> <span class="time_tracker" data-start-time="3000"></span>
                             </div>
                         </div>
 
-                    </div>
+                    </a>
 
-                    <div class="activity" data-status="intransit">
+                    <a href="./delivery.html" class="activity" data-status="intransit">
                         <div class="activity_info">
                             <div class="activity_id">#19025638</div>
                             <div class="activity_status intransit">in transit</div>
@@ -158,13 +156,12 @@
                                 </div>
                             </div>
                             <div class="action_btn">
-                                <a href="./delivery.html" type="button" title="view destination"><i
-                                        class="fa fa-angle-right"></i></a>
+                                <i class="fa fa-clock"></i> <span class="time_tracker" data-start-time="3000"></span>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="activity" data-status="delayed">
+                    <a href="./delivery.html" class="activity" data-status="delayed">
                         <div class="activity_info">
                             <div class="activity_id">#19025639</div>
                             <div class="activity_status delayed">delayed</div>
@@ -197,13 +194,12 @@
                                 </div>
                             </div>
                             <div class="action_btn">
-                                <a href="./delivery.html" type="button" title="view destination"><i
-                                        class="fa fa-angle-right"></i></a>
+                                <i class="fa fa-clock"></i> <span class="time_tracker" data-start-time="3000"></span>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="activity" data-status="cancelled">
+                    <a href="./delivery.html" class="activity" data-status="cancelled">
                         <div class="activity_info">
                             <div class="activity_id">#19025640</div>
                             <div class="activity_status cancelled">cancelled</div>
@@ -236,11 +232,10 @@
                                 </div>
                             </div>
                             <div class="action_btn">
-                                <a href="./delivery.html" type="button" title="view destination"><i
-                                        class="fa fa-angle-right"></i></a>
+                                <i class="fa fa-clock"></i> <span class="time_tracker" data-start-time="3000"></span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
             </main>
@@ -250,7 +245,38 @@
 
 
 
+    <script>
+        function startTimeTrackers() {
+            let trackerElements = document.querySelectorAll(".time_tracker");
 
+            trackerElements.forEach((element) => {
+                let startTime = parseInt(element.getAttribute("data-start-time")) * 1000; // Convert seconds to milliseconds
+                let startTimestamp = new Date().getTime() - startTime;
+
+                function updateTracker() {
+                    let now = new Date().getTime();
+                    let elapsedTime = now - startTimestamp;
+
+                    let days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((elapsedTime / (1000 * 60 * 60)) % 24);
+                    let minutes = Math.floor((elapsedTime / (1000 * 60)) % 60);
+                    let seconds = Math.floor((elapsedTime / 1000) % 60);
+
+                    element.innerHTML =
+                        (days < 10 ? "0" : "") + days + "d " + ":" + " " +
+                        (hours < 10 ? "0" : "") + hours + "h " + ":" + " " +
+                        (minutes < 10 ? "0" : "") + minutes + "m ";
+                    // (seconds < 10 ? "0" : "") + seconds + "s";
+                }
+
+                updateTracker(); // Run immediately
+                setInterval(updateTracker, 1000); // Update every second
+            });
+        }
+
+        // Start all time trackers
+        startTimeTrackers();
+    </script>
     <script>
         document.querySelectorAll('.filter_btn').forEach(button => {
             button.addEventListener('click', () => {
@@ -267,6 +293,8 @@
                 });
             });
         });
+
+
     </script>
 </body>
 

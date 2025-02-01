@@ -61,6 +61,7 @@ nav .nav_links .nav_link a {
   text-decoration: none;
   color: #828282;
   transition: all 400ms ease;
+  position: relative;
 }
 
 nav .nav_links .nav_link a:hover {
@@ -83,6 +84,14 @@ nav .nav_links .nav_link.ac {
 nav .nav_links .nav_link a.act {
   background: #000088;
   color: #fff;
+}
+
+nav .nav_links .nav_link a .point {
+  position: absolute;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  background: red;
 }
 
 .top {
@@ -180,6 +189,93 @@ nav .nav_links .nav_link a.act {
   width: 100%;
 }
 
+.notification {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification_cont {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  max-width: 700px;
+  width: 100%;
+  min-width: 280px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 3px;
+  filter: drop-shadow(1px 2px 10px #0000884f);
+}
+.notification_cont .details {
+  width: 100%;
+  max-height: 200px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.notification_cont .details::-webkit-scrollbar {
+  width: 2px;
+  background: transparent;
+}
+
+.notification_cont .noti {
+  border-top: 2px solid #ccc;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.notification_cont .noti .point {
+  width: 10px;
+  height: 8px;
+  padding: 2px;
+  float: right;
+  border-radius: 50%;
+}
+
+.notification .notification_cont .noti.unread {
+  color: #000;
+  border-color: #000088;
+  background: linear-gradient(to bottom, #00008830, #fff);
+}
+
+.notification .notification_cont .noti.read {
+  color: #b1b0b0;
+}
+
+.notification .notification_cont .noti.unread .point {
+  background: #000088;
+  /* animation: fade 1s infinite ease-in-out; */
+}
+
+.notification .notification_cont .noti.read .point {
+  background: #b1b0b0;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.notification .notification_cont::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  top: -10px;
+  transform: rotate(45deg);
+  right: 10px;
+  z-index: -1;
+}
+
 .notification .notification_bell {
   width: 40px;
   height: 40px;
@@ -195,7 +291,7 @@ main {
   background: rgb(255, 255, 255);
   flex: 5;
   height: auto;
-  border-radius: 30px 30px 0 0;
+  border-radius: 0;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -315,6 +411,11 @@ main .box_tracking .track_info .track_status {
   background: rgb(235, 26, 26);
 }
 
+.activity {
+  text-decoration: none;
+  color: #000;
+}
+
 .activity .track_dest {
   display: flex;
   align-items: center;
@@ -347,6 +448,9 @@ main .box_tracking .track_info .track_status {
   gap: 10px;
   align-items: center;
 }
+.activity .t_profile .t_msg {
+  color: #b1b0b0;
+}
 .activity .t_profile .t_img {
   width: 40px;
   height: 40px;
@@ -367,6 +471,9 @@ main .box_tracking .track_info .track_status {
 .activity .tracking_info .action_btn {
   display: flex;
   align-items: center;
+  color: #b1b0b0;
+  gap: 10px;
+  font-size: 12px;
 }
 
 .activity .tracking_info .action_btn a {
@@ -419,7 +526,7 @@ main .box_tracking .track_info .track_status {
   height: 80vh;
   min-height: 80vh;
   overflow: hidden;
-  border-radius: 30px 30px 0 0;
+  border-radius: 0;
 }
 
 main .info_box {
@@ -741,7 +848,7 @@ main .destination_trail .trail.home .icon::after {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .noshow {
