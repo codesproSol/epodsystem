@@ -15,10 +15,12 @@
         <div class="container history_cont">
             <nav>
                 <div class="nav_links">
-                    <div class="nav_link"><a class="" href="./index.html"><i class="fa fa-house"></i></a></div>
+                    <div class="nav_link"><a class="" href="./index.html"><i class="fa fa-house"></i>
+                            <div class="noti_alert">1</div>
+                        </a></div>
                     <div class="nav_link"><a class="active" href="./delivery.html"><i class="fa fa-file"></i></a></div>
-                    <div class="nav_link ac"><a class="act" href="./form"><i class="fa fa-add"></i></a></div>
-                    <div class="nav_link"><a class="" href="./chat"><i class="fa fa-message-captions"></i></a></div>
+                    <div class="nav_link"><a class="" href="#"><i class="fa fa-folder-open"></i></a></div>
+                    <div class="nav_link"><a class="" href="#"><i class="fa fa-message-captions"></i></a></div>
                     <div class="nav_link"><a class="" href="./setting.html"><i class="fa fa-user"></i></a></div>
                 </div>
             </nav>
@@ -28,9 +30,7 @@
                         History
                     </a>
 
-                    <div class="notification">
-                        <div class="notification_bell"><i class="fa fa-bell"></i></div>
-                    </div>
+
                 </div>
             </div>
             <main>
@@ -245,57 +245,7 @@
 
 
 
-    <script>
-        function startTimeTrackers() {
-            let trackerElements = document.querySelectorAll(".time_tracker");
-
-            trackerElements.forEach((element) => {
-                let startTime = parseInt(element.getAttribute("data-start-time")) * 1000; // Convert seconds to milliseconds
-                let startTimestamp = new Date().getTime() - startTime;
-
-                function updateTracker() {
-                    let now = new Date().getTime();
-                    let elapsedTime = now - startTimestamp;
-
-                    let days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
-                    let hours = Math.floor((elapsedTime / (1000 * 60 * 60)) % 24);
-                    let minutes = Math.floor((elapsedTime / (1000 * 60)) % 60);
-                    let seconds = Math.floor((elapsedTime / 1000) % 60);
-
-                    element.innerHTML =
-                        (days < 10 ? "0" : "") + days + "d " + ":" + " " +
-                        (hours < 10 ? "0" : "") + hours + "h " + ":" + " " +
-                        (minutes < 10 ? "0" : "") + minutes + "m ";
-                    // (seconds < 10 ? "0" : "") + seconds + "s";
-                }
-
-                updateTracker(); // Run immediately
-                setInterval(updateTracker, 1000); // Update every second
-            });
-        }
-
-        // Start all time trackers
-        startTimeTrackers();
-    </script>
-    <script>
-        document.querySelectorAll('.filter_btn').forEach(button => {
-            button.addEventListener('click', () => {
-                document.querySelectorAll('.filter_btn').forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                let status = button.getAttribute('data-status');
-                document.querySelectorAll('.activity').forEach(activity => {
-                    if (status === 'all' || activity.getAttribute('data-status') === status) {
-                        activity.style.display = 'block';
-                    } else {
-                        activity.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
