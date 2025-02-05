@@ -40,37 +40,6 @@ function startTimeTrackers() {
 // Start all time trackers
 startTimeTrackers();
 
-// ----------------------notifaction script---------------------------
-document.addEventListener("DOMContentLoaded", function () {
-  let bell = document.querySelector(".notification_bell");
-  let notificationPanel = document.querySelector(".notification_cont");
-  let notifications = document.querySelectorAll(".noti");
-
-  // Toggle notification panel
-  bell.addEventListener("click", function () {
-    notificationPanel.style.display =
-      notificationPanel.style.display === "block" ? "none" : "block";
-  });
-
-  // Mark notifications as read on click
-  notifications.forEach((noti) => {
-    noti.addEventListener("click", function () {
-      if (noti.classList.contains("unread")) {
-        noti.classList.remove("unread");
-        noti.classList.add("read");
-        noti.querySelector(".point").style.display = "none"; // Hide red dot
-      }
-    });
-  });
-
-  // Close the notification panel when clicking outside
-  document.addEventListener("click", function (event) {
-    if (!notificationPanel.contains(event.target) && !bell.contains(event.target)) {
-      notificationPanel.style.display = "none";
-    }
-  });
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   const noitAlerts = document.querySelectorAll(".noti_alert");
 
@@ -79,16 +48,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Update all notification alert elements
   noitAlerts.forEach((noitAlert) => {
-    noitAlert.innerHTML = unreadCount > 0 ? unreadCount : "";
+    if (unreadCount > 0) {
+      noitAlert.style.display = "flex";
+      noitAlert.innerHTML = unreadCount;
+    } else {
+      noitAlert.style.display = "none";
+    }
   });
 });
 
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("noti")) {
+    event.target.classList.remove("unread");
+    handleCountUpdate();
+  }
+});
+
+window.addEventListener("storage", (event) => {
+  if (event.key === "unreadCount") {
+    handleCountUpdate();
+  }
+});
+
 // ----------------filter button-------------------------------------
-const filterButtons = document.querySelectorAll(".filter_btn");
-filterButtons.forEach((f_button) => {
-  f_button.addEventListener("click", () => {
+document.querySelectorAll(".filter_btn").forEach((button) => {
+  button.addEventListener("click", () => {
     document.querySelector(".filter_btn.active")?.classList.remove("active");
-    f_button.classList.add("active");
+    button.classList.add("active");
 
     let status = button.getAttribute("data-status");
     document.querySelectorAll(".activity").forEach((activity) => {
