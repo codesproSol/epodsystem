@@ -222,7 +222,7 @@ nav .nav_links .nav_link a .point {
 }
 
 .notification_cont .noti {
-  border-top: 2px solid #ccc;
+  border-left: 2px solid #ccc;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -240,7 +240,7 @@ nav .nav_links .nav_link a .point {
 .notification .notification_cont .noti.unread {
   color: #000;
   border-color: #000088;
-  background: linear-gradient(to bottom, #00008830, #fff);
+  background: linear-gradient(to right, #00008812, #fff);
 }
 
 .notification .notification_cont .noti.read {
