@@ -958,7 +958,7 @@ a {
   height: 100vh;
   position: fixed;
   z-index: 999999;
-  background: #000088;
+  background: #cccccc92;
   backdrop-filter: blur(20px);
   display: flex;
   align-items: center;
